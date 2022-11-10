@@ -102,30 +102,86 @@ class SquareMatrix(Matrix):
                 self *= self
                 power //= 2
         return result
+    
+#Filas de la matriz A
+#Puede agregar la fila o columna que plazca, puede leer una matriz mxn
 
+A1 = [3,4,3]
+A2 = [-1,2,3]
+A3 = [1,-2,3]
+A = SquareMatrix([A1, A2, A3])
 
-A = SquareMatrix([[1, 0, 0], [0, 1, 0], [0, 0, 1]])
-B = Matrix([[1, 0, -2], [0, 1, 0], [1, 2, -2]])
-C_1 = SquareMatrix([[-11, 5, -4, 3], [10, -3, 4, -2], [6, -2, 2, -1]])
-print(A * B * C_1)
+#Filas de la matriz B
+
+B1 = [-5,2,1]
+B2 = [1,-3,2]
+B3 = [3,2,-3]
+B = Matrix([B1, B2, B3])
+
+C1 = A1+B1
+C2 = A2+B2
+C3 = A3+B3
+
 print()
-print(A+B)
+print("La matriz A es:")
+print()
+
+print(A)
+print()
+print("La matriz B es:")
+print()
+
+print(B)
+print()
+print("La matriz A+B es:")
+print()
+
+print(A + B)
+print()
+print("La matriz A*B es:")
+print()
+
+print(A*B)
+print()
+print("La traspuesta de A es")
 print()
 print(A.transpuesta())
+print() 
+
+print("La traspuesta de B es")
+print()
+print(B.transpuesta())
 print()
 
 #==============================================================
 #Gráficas
 #==============================================================
 
+#u = [1,2,3]
+#v = [1,0,1]
+#q = [0,3,1]
+
 fig = plt.figure('Gráfica')
 ax = Axes3D(fig)
+ax.set_xlim([-10,10])
+ax.set_ylim([-10,10])
+ax.set_zlim([-10,10])
 
-x = np.linspace(-4, 4, 50)
-y = np.linspace(-4, 4, 50)
+#Vectores Matriz A
 
-def z(x, y):
-    return np.sin(np.sqrt(x**2 + y**2))
+start = [0,0,0]
+ax.quiver(start[0], start[1], start[2], A1[0], A1[1], A1[2])
+ax.quiver(start[0], start[1], start[2], A2[0], A2[1], A2[2], color = "g")
+ax.quiver(start[0], start[1], start[2], A3[0], A3[1], A3[2], color = "r")
 
-ax.plot(x, y, z(x, y))
-plt.show()
+#Vectores Matriz B
+
+ax.quiver(start[0], start[1], start[2], B1[0], B1[1], B1[2])
+ax.quiver(start[0], start[1], start[2], B2[0], B2[1], B2[2], color = "g")
+ax.quiver(start[0], start[1], start[2], B3[0], B3[1], B3[2], color = "r")
+
+#Suma de los vectores
+
+ax.quiver(start[0], start[1], start[2], C1[0], C1[1], C1[2])
+ax.quiver(start[0], start[1], start[2], C2[0], C2[1], C2[2], color = "g")
+ax.quiver(start[0], start[1], start[2], C3[0], C3[1], C3[2], color = "r")
