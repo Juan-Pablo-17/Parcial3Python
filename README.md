@@ -24,3 +24,8 @@ axes la tomografía en 3D a dicha matriz.
 ## Especificaciones
 
 Estoy usando el entorno de programación llamado Spyder, la versión Python 3.8.10 64-bit para Windows 10.
+
+##Dos documentos
+
+1. Parcial3MatricesMxN es un código el cual es capaz de leer matrices MxN además de hacer operaciones entre ellas
+2. Parcial3MatricesYGraficas3D es el código mediante el cual ingresando una matriz 3x3 como la desee, el programa hace la gráfica en 3D de los vectores que conforman la matriz
